@@ -1,8 +1,8 @@
 # MEAN Cheat Sheet
 ## Created by Michael Arnold @xmbarnold
-===================
+---
 ### Express Server Setup
-===================
+---
 - [ ] Create the root project folder with the name of your project
 - [ ] Inside the root folder, create a new folder called **server**
 - [ ] Create a new file called **server.js**
@@ -175,9 +175,9 @@ module.exports = {
     }
 }
 ```
-====================
+---
 ### Angular Setup
-====================
+---
 - [ ] Inside the root folder for the project, run the following command in your terminal
 ```cli
 ng new public
@@ -192,7 +192,7 @@ ng g s http
 ```cli
 ng g c component-name
 ```
-// replace component name with desired name
+> replace component name with desired name
 
 
 - [ ] Finally create a 404 Page Not Found component
@@ -243,7 +243,7 @@ export class HttpService {
 }
 ```
 
-// Refer to your **routes.js** file from the Express server
+##### Refer to your **routes.js** file from the Express server
 - [ ] Inside the HttpService class, add methods that return the observable for each API route you previously set up
 ```typescript
 getAllModels(){
@@ -306,9 +306,9 @@ It is very important that the component routes ARE NOT the same as your Express 
 
 #### At this point, the rest of the code will be up to you
 
-=================
+---
 ### Git Repo
-=================
+---
 - [ ] Open a git or linux terminal (gitbash, linux terminal, mac terminal)
 - [ ] Navigate into the public folder of your project
 - [ ] Run the following command
