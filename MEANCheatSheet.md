@@ -3,25 +3,25 @@
 ===================
 ### Express Server Setup
 ===================
-- [] Create the root project folder with the name of your project
-- [] Inside the root folder, create a new folder called **server**
-- [] Create a new file called **server.js**
-- [] Inside the server folder create three new folders:
+- [ ] Create the root project folder with the name of your project
+- [ ] Inside the root folder, create a new folder called **server**
+- [ ] Create a new file called **server.js**
+- [ ] Inside the server folder create three new folders:
     * **config**
     * **controllers**
     * **models**
-- [] Inside **config** create two new files:
+- [ ] Inside **config** create two new files:
     * **mongoose.js**
     * **routes.js**
-- [] Inside **models** create a new file:
+- [ ] Inside **models** create a new file:
     * **{model}.js** // replace model with name of your model
-- [] Inside **controllers** create a new file:
+- [ ] Inside **controllers** create a new file:
     * **{models}.js** //replace models with plural name of your model
-- [] Open a terminal and run the following commands:
+- [ ] Open a terminal and run the following commands:
 > npm init
 > npm install body-parser express path mongoose mongoose-unique-validator --save
 
-- [] Open the **server.js** file and add the following code:
+- [ ] Open the **server.js** file and add the following code:
 ```javascript
 var express = require('express');
 var app = express();
@@ -38,7 +38,7 @@ require('./server/config/mongoose');
 require('./server/config/routes')(app);
 ```
 
-- [] Open the **mongoose.js** file in **config** and add the following code:
+- [ ] Open the **mongoose.js** file in **config** and add the following code:
 ```javascript
 var mongoose = require('mongoose');
 var path = require('path');
@@ -63,7 +63,7 @@ fs.readdirSync(models_path).forEach((file) => {
 })
 ```
 
-- [] Open the **routes.js** file in **config** and add the following code
+- [ ] Open the **routes.js** file in **config** and add the following code
 ```javascript
 var models = require('../controllers/models'); // replace models with name of your controller file
 
@@ -83,7 +83,7 @@ module.exports = (app) => {
 }
 ```
 
--[] Open the **model.js** file in **models** and add the following code
+-[ ] Open the **model.js** file in **models** and add the following code
 ```javascript
 var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
@@ -102,7 +102,7 @@ ModelSchema.plugin(uniqueValidator, {message: 'Unique validation message here'})
 module.exports = mongoose.model('Model', ModelSchema); // replace Model with Model name
 ```
 
--[] Open the **models.js** file in **controllers** and add the following code
+-[ ] Open the **models.js** file in **controllers** and add the following code
 ```javascript
 var mongoose = require('mongoose');
 require('../models/model'); // replace model with your model.js file name
@@ -176,30 +176,30 @@ module.exports = {
 ====================
 ### Angular Setup
 ====================
-- [] Inside the root folder for the project, run the following command in your terminal
+- [ ] Inside the root folder for the project, run the following command in your terminal
 > ng new public
 
-- [] Move inside the public folder and run the following command
+- [ ] Move inside the public folder and run the following command
 > ng g s http
 
-- [] If you have additional components to create, create them now using the following command
+- [ ] If you have additional components to create, create them now using the following command
 > ng g c component-name
 // replace component name with desired name
 
-- [] Finally create a 404 Page Not Found component
+- [ ] Finally create a 404 Page Not Found component
 > ng g c page-not-found
 
-- [] Navigate to *your_project/public/src/app/*
-- [] Open **app.module.ts**
-- [] Add the following import statements at the top
+- [ ] Navigate to *your_project/public/src/app/*
+- [ ] Open **app.module.ts**
+- [ ] Add the following import statements at the top
 ```typescript
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './http.service';
 import { FormsModule } from '@angular/forms';
 ```
-- [] Ensure that all of the components you created are also imported
-- [] In *@NgModule* locate the array **declarations** and ensure all the components imported are included in the array
-- [] Now locate the array **imports** and add HttpClientModule and FormsModule to it
+- [ ] Ensure that all of the components you created are also imported
+- [ ] In *@NgModule* locate the array **declarations** and ensure all the components imported are included in the array
+- [ ] Now locate the array **imports** and add HttpClientModule and FormsModule to it
 ```typescript
 {
     imports: [
@@ -210,7 +210,7 @@ import { FormsModule } from '@angular/forms';
     ]
 }
 ```
-- [] Finally locate the array **providers** and add HttpService to it
+- [ ] Finally locate the array **providers** and add HttpService to it
 ```typescript
 {
     providers: [
@@ -218,13 +218,13 @@ import { FormsModule } from '@angular/forms';
     ]
 }
 ```
-- [] Open **http.service.ts**
-- [] Import the HttpClient at the top of the page
+- [ ] Open **http.service.ts**
+- [ ] Import the HttpClient at the top of the page
 ```typescript
 import { HttpClient } from '@angular/common/http';
 ```
 
-- [] Use the HttpClient in the constructor
+- [ ] Use the HttpClient in the constructor
 ```typescript
 export class HttpService {
 
@@ -233,7 +233,7 @@ export class HttpService {
 ```
 
 // Refer to your **routes.js** file from the Express server
-- [] Inside the HttpService class, add methods that return the observable for each API route you previously set up
+- [ ] Inside the HttpService class, add methods that return the observable for each API route you previously set up
 ```typescript
 getAllModels(){
     return this._http.get('/models');
@@ -241,20 +241,20 @@ getAllModels(){
 // Create the rest of the CRUD commands using the proper Http method
 ```
 
-- [] Open **app.component.ts**
-- [] Change the *Component* import statement to include OnInit and import HttpService
+- [ ] Open **app.component.ts**
+- [ ] Change the *Component* import statement to include OnInit and import HttpService
 ```typescript
 import { Component, OnInit } from '@angular/core'; // changed this line
 import { HttpService } from './http.service';
 ```
 
-- [] Change the *AppComponent* class to implement OnInit
+- [ ] Change the *AppComponent* class to implement OnInit
 ```typescript
 export class AppComponent implements OnInit {
 
 }
 ```
-- [] Within *AppComponent* class add a constructor that takes in the HttpService and create the ngOnInit method
+- [ ] Within *AppComponent* class add a constructor that takes in the HttpService and create the ngOnInit method
 ```typescript
 export class AppComponent implements OnInit {
     
@@ -264,15 +264,15 @@ export class AppComponent implements OnInit {
 }
 ```
 
-- [] Open **app-routing.module.ts**
-- [] Ensure *Routes* and *RouterModule* are imported at the top
+- [ ] Open **app-routing.module.ts**
+- [ ] Ensure *Routes* and *RouterModule* are imported at the top
 ```typescript
 import { Routes, RouteModule } from '@angular/router';
 ```
 
-- [] Ensure that all the components you created are also imported
-- [] Locate the *routes* object
-- [] Within *Routes = []* create new routes for each component you added
+- [ ] Ensure that all the components you created are also imported
+- [ ] Locate the *routes* object
+- [ ] Within *Routes = [ ]* create new routes for each component you added
 ```typescript
 const routes: Routes = [
     //example
@@ -285,7 +285,7 @@ const routes: Routes = [
 #### IMPORTANT!!
 It is very important that the component routes ARE NOT the same as your Express API routes
 
-- [] Finally ensure that *@NgModule* contains the following
+- [ ] Finally ensure that *@NgModule* contains the following
 ```typescript
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
@@ -298,13 +298,13 @@ It is very important that the component routes ARE NOT the same as your Express 
 =================
 ### Git Repo
 =================
-- [] Open a git or linux terminal (gitbash, linux terminal, mac terminal)
-- [] Navigate into the public folder of your project
-- [] Run the following command
+- [ ] Open a git or linux terminal (gitbash, linux terminal, mac terminal)
+- [ ] Navigate into the public folder of your project
+- [ ] Run the following command
 > rm -rf .git*
 // This will remove the auto-generated git repo Angular initializes
-- [] Now open the project folder and create a new file called **.gitignore**
-- [] Add the following code inside the file
+- [ ] Now open the project folder and create a new file called **.gitignore**
+- [ ] Add the following code inside the file
 ```
 # Created by https://www.gitignore.io/api/mean
 # Edit at https://www.gitignore.io/?templates=mean
