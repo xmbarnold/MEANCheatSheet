@@ -18,8 +18,10 @@
 - [ ] Inside **controllers** create a new file:
     * **{models}.js** //replace models with plural name of your model
 - [ ] Open a terminal and run the following commands:
-> npm init
-> npm install body-parser express path mongoose mongoose-unique-validator --save
+```cli
+npm init
+npm install body-parser express path mongoose mongoose-unique-validator --save
+```
 
 - [ ] Open the **server.js** file and add the following code:
 ```javascript
@@ -83,7 +85,7 @@ module.exports = (app) => {
 }
 ```
 
--[ ] Open the **model.js** file in **models** and add the following code
+- [ ] Open the **model.js** file in **models** and add the following code
 ```javascript
 var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
@@ -102,7 +104,7 @@ ModelSchema.plugin(uniqueValidator, {message: 'Unique validation message here'})
 module.exports = mongoose.model('Model', ModelSchema); // replace Model with Model name
 ```
 
--[ ] Open the **models.js** file in **controllers** and add the following code
+- [ ] Open the **models.js** file in **controllers** and add the following code
 ```javascript
 var mongoose = require('mongoose');
 require('../models/model'); // replace model with your model.js file name
