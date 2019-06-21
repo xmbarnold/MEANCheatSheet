@@ -179,17 +179,26 @@ module.exports = {
 ### Angular Setup
 ====================
 - [ ] Inside the root folder for the project, run the following command in your terminal
-> ng new public
+```cli
+ng new public
+```
 
 - [ ] Move inside the public folder and run the following command
-> ng g s http
+```cli
+ng g s http
+```
 
 - [ ] If you have additional components to create, create them now using the following command
-> ng g c component-name
+```cli
+ng g c component-name
+```
 // replace component name with desired name
 
+
 - [ ] Finally create a 404 Page Not Found component
-> ng g c page-not-found
+```cli
+ng g c page-not-found
+```
 
 - [ ] Navigate to *your_project/public/src/app/*
 - [ ] Open **app.module.ts**
@@ -303,7 +312,9 @@ It is very important that the component routes ARE NOT the same as your Express 
 - [ ] Open a git or linux terminal (gitbash, linux terminal, mac terminal)
 - [ ] Navigate into the public folder of your project
 - [ ] Run the following command
-> rm -rf .git*
+```cli
+rm -rf .git*
+```
 // This will remove the auto-generated git repo Angular initializes
 - [ ] Now open the project folder and create a new file called **.gitignore**
 - [ ] Add the following code inside the file
